@@ -13,10 +13,10 @@ Sections:
 Finding the Data and Downloading it From Census
 
 1. Create a working folder on the desktop named “Temp Data Folder” and move the downloaded block zip to it
-2. Go to http://www2.census.gov/.  
-  a. Scroll down and select “GEO”
-  b. Navigate to “Tiger”
-  c. Select “TIGER2012”
+2. Go to http://www2.census.gov/.  \n
+\ta. Scroll down and select “GEO”\n
+\tb. Navigate to “Tiger”\n
+\tc. Select “TIGER2012”\n
   d. Click “TABBLOCK”
   e. Download “tl_2012_11_tabblock.zip” because these are the block groups for DC (FIPS STATE CODE 11)
 
