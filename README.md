@@ -59,7 +59,7 @@ Section 3 - Turning the Data into a Geojson File
 
 Section 4 - Adding the Geojson to a Leaflet Web Map
 1.  We are just going to use a leaflet sample for this.  Go to http://leafletjs.com/examples/choropleth-example.html
-2.  
+2.  Save the demo as a local html file.  Re-source the libraries it is referencing to be remote libraries.
 
 
 
