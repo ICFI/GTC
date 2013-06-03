@@ -1,16 +1,18 @@
 GTC
 ===
 
-Intro to Web Mapping
+#Intro to Web Mapping
 
 Sections:
+
 1.  Finding the Data and Downloading it From Census
 2.  Joining and Cleaning the Data in ArcMap
 3.  Turning the Data into a Geojson File
 4.  Adding the Geojson to a Leaflet Web Map
 
 
-Section 1 - Finding the Data and Downloading it From Census
+##Section 1 - Finding the Data and Downloading it From Census
+
 1. Create a working folder on the desktop
 2. Go to http://www2.census.gov/.
   a. Scroll down and select “GEO”
@@ -36,12 +38,13 @@ Section 1 - Finding the Data and Downloading it From Census
   n. Move the downloaded file to your working folder on the desktop
 
 
-Section 2 - Joining the data in ArcMap
+##Section 2 - Joining the data in ArcMap
+
 1.  In the working directory, unzip both the Geo data and the tabular data.
 2.  Open the population data in a text editor, preferably textpad.  Revisions appear on some lines with the population count.  You need to remove the reference to revisions, or your data will be lose when converting from text to number.
   a. Revisions are enclosed in parenthesis.  Use the find/replace feature to replace all starting parens with a comma and the paren (Replace "(" with ",(".  This breaks the revision into it's own column.
-  b. CSV Files need the same number of columns for every record.  Now replace the line break character with a comma and the line break (replace "\n" with ",\n".  Make sure regular expressions are turned on).
-  c. Now we have 1 too many columns on the records with revisions, so replace the close parens followed by a comma with just close parens (Replace ")," with ")")
+	b. CSV Files need the same number of columns for every record.  Now replace the line break character with a comma and the line break (replace "\n" with ",\n".  Make sure regular expressions are turned on).
+	c. Now we have 1 too many columns on the records with revisions, so replace the close parens followed by a comma with just close parens (Replace ")," with ")")
 2.  In ESRI, create a file geodatabase in your working directory, and export both datasets to it.
 3.  In the demographic table, add a new String field for the FIPS code.  Calculate GeoID2 to be the fips code.  By default, the geoid2 field comes in as a number, so on states like california (06 fips) the leading zero will be dropped.
 4.  Add a new number (long) field for total population, p001 will come in as a string. Calculate p001 to the new number field. 
@@ -52,14 +55,24 @@ Section 2 - Joining the data in ArcMap
 
 
 
-Section 3 - Turning the Data into a Geojson File
+##Section 3 - Turning the Data into a Geojson File
+
 1.  We checked github, someone else already built a tool to convert data in ESRI to GeoJson.  Download this tool:  https://github.com/project-open-data/esri2open
 2.  Convert your block groups to geojson
 
 
-Section 4 - Adding the Geojson to a Leaflet Web Map
-1.  We are just going to use a leaflet sample for this.  Go to http://leafletjs.com/examples/choropleth-example.html
-2.  Save the demo as a local html file.  Re-source the libraries it is referencing to be remote libraries.
+##Section 4 - Adding the Geojson to a Leaflet Web Map
+
+1. We are just going to use a leaflet sample for this.  Go to http://leafletjs.com/examples/choropleth-example.html
+2. Save the demo as a local html file in your localhost directory.
+3. Re-source the libraries it is referencing to be remote libraries. (line 10, 49, 50)
+3. Change the lat/long and zoom (line 54)
+4. Change what key is being user for the hover legend (lines 73 to 75)
+5. Change legend breaks (Line 83)
+6. Change key you are symbolizing on (Line 100)
+7. Change json variable to be new name (line 140)
+8. Change legend breaks (line 153)
+
 
 
 
